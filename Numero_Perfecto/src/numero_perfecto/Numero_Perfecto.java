@@ -13,32 +13,47 @@ import java.util.Scanner;
  */
 public class Numero_Perfecto {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    
+    
+    
+    
+    
+    
+    
+    public static void main(String[] args){
+      
+      
+      
+        System.out.println("Ingrese el número:");
+        int numero = 8128;
+        long inicio = System.nanoTime();
+      
+        if (numero <= 0) {
+            System.out.println("El número debe ser positivo.");
+            return;
+        }
         
-        long startTime = System.nanoTime();
-        int number = 99;
-        
-        int divisor;
-        int par = 0; 
-  
-        for (int i = 1; i < number; i++) {
-            divisor = number % i;
-       
-            if (divisor == 0) {
-                par = i + par;
+        int sumaDivisores = 0;
+        for (int i = 1; i <= numero /2; i++) {
+            if (numero % i == 0) {
+                sumaDivisores += i;
             }
         }
-        if (par == number ) {
-            System.out.println("Si es pefecto");
-        }else{
-            System.out.println("No es pefecto");
+          
+        if (sumaDivisores == numero) {
+            System.out.println("El número " + numero + " es un número perfecto.");
+        } else {
+            System.out.println("El número " + numero + " no es un número perfecto.");
         }
-        long endTime = System.nanoTime();
+        
+        long fin = System.nanoTime();
+        
+        long tiempo = (fin - inicio);
   
-      System.out.println("Duración " +  (endTime-startTime) + " Nanosegundos.");
+        System.out.println("Tiempo de ejecución: " + tiempo + " nanosegundos");
     }
+    
+        
+        
     
 }
